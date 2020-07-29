@@ -133,7 +133,7 @@ class AD5933 {
 
         // Perform frequency sweeps
         static bool frequencySweep(int real[], int imag[], int);
-        static bool calibrate(double gain[], int phase[], int ref, int n);
+        static bool calibrate(double gain[], double phase[], int ref, int n);
         static bool calibrate(double gain[], int phase[], int real[],
                               int imag[], int ref, int n);
     private:
@@ -143,6 +143,7 @@ class AD5933 {
         // Sending/Receiving byte method, for easy re-use
         static int getByte(byte, byte*);
         static bool sendByte(byte, byte);
+        static double calcPhase(int real, int imag);
 };
 
 #endif
